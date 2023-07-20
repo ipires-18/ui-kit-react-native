@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "ui-kit-react-native",
+    "slug": "ui-kit-react-native",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
