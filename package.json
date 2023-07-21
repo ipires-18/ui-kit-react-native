@@ -1,11 +1,14 @@
 {
   "name": "ui-kit-react-native",
-  "private":true,
+  "private": true,
   "main": "index.js",
   "repository": "git@github.com:ipires-18/ui-kit-react-native.git",
   "author": "Ian Oliveira <ian-pires@hotmail.com>",
   "license": "MIT",
-  "workspaces":["packages/*", "packages/components/*"],
+  "workspaces": [
+    "packages/*",
+    "packages/components/*"
+  ],
   "scripts": {
     "start": "expo start --dev-client",
     "android": "expo run:android",
@@ -20,6 +23,10 @@
     "react-native": "0.71.8"
   },
   "devDependencies": {
-    "@babel/core": "^7.20.0"
+    "@babel/core": "^7.20.0",
+    "@lerna-lite/cli": "^2.5.0",
+    "@lerna-lite/publish": "^2.5.0",
+    "@types/react": "^18.2.15",
+    "typescript": "^5.1.6"
   }
 }
