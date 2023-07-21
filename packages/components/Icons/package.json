@@ -1,0 +1,20 @@
+{
+  "name": "@poc-native/icons",
+  "version": "0.0.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "clean:node_modules": "rm -rf node_modules",
+    "clean:dist": "rm -rf dist",
+    "build": "tsc --outDir dist",
+    "lint": "eslint --fix --cache --max-warnings=0"
+  },
+  "peerDependencies": {
+    "react":"*",
+    "react-native":"*",
+    "styled-components": "*"
+  }
+}
