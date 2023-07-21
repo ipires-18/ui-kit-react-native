@@ -1,0 +1,24 @@
+{
+  "name": "@zera-native/zds-$CP_KEBAB_NO_ZDS",
+  "version": "0.0.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "clean:node_modules": "rm -rf node_modules",
+    "clean:dist": "rm -rf dist",
+    "build": "tsc --outDir dist",
+    "lint": "eslint --fix --cache --max-warnings=0"
+  },
+  "peerDependencies": {
+    "react":"*",
+    "react-native":"*",
+    "styled-components": "*"
+  },
+  "publishConfig": {
+    "registry": "https://pkgs.dev.azure.com/hiae-mda/_packaging/zera/npm/registry/"
+  },
+  "gitHead": "360706c67f9a7a8b783da3903cc637cf114cf866"
+}

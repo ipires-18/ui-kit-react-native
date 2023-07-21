@@ -1,0 +1,33 @@
+#!/bin/bash
+COMPONENTS_PATH="../packages/components"
+TEMPLATE_PATH="./template"
+CP_CAMEL=$1 #INPUT
+CP_CAMEL_PROPS=$CP_CAMEL"Props"
+CP_KEBAB=$(echo $CP_CAMEL | sed -r 's/([a-z0-9])([A-Z])/\1-\2/g' | awk '{print tolower($0)}')
+CP_KEBAB_NO_ZDS=$(echo $CP_KEBAB | sed -e "s/zds-//")
+BASE_PATH="$COMPONENTS_PATH/$CP_CAMEL"
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+NC='\033[0m' # No Color
+
+export CP_KEBAB CP_CAMEL CP_CAMEL_PROPS CP_KEBAB_NO_ZDS && echo
+if [ -d "$BASE_PATH" ]; then
+    echo -e "❌ ${RED}Já existe um componente com o nome '$CP_CAMEL'${NC}" && echo && exit 1
+fi
+
+function replace_kebab {
+    NAME=${1/CP_KEBAB/"$CP_KEBAB"}
+    echo $NAME | sed -e "s/template//" | cut -c4-
+}
+function create_file {
+    FILE_TEMPLATE_PATH=$1
+    FILE_NAME=$(replace_kebab $FILE_TEMPLATE_PATH)
+    envsubst <$FILE_TEMPLATE_PATH | cat >"$BASE_PATH/$FILE_NAME"
+}
+
+find $TEMPLATE_PATH -type f | while read -r FILE_ORIGIN; do
+    FILE_DESTINATION="$BASE_PATH/${FILE_ORIGIN#$TEMPLATE_PATH/}"
+    mkdir -p "$(dirname "$FILE_DESTINATION")"
+    create_file $FILE_ORIGIN
+done
+echo -e "✅ ${GREEN}Componente '$CP_CAMEL' criado com sucesso! ${NC}" && echo
