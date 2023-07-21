@@ -4,6 +4,9 @@
     "./@types/declarations.d.ts"
   ],
   "compilerOptions": {
+    "target": "es2017",
+    "module": "commonjs",
+    "forceConsistentCasingInFileNames": true,
     "allowJs": true,
     "esModuleInterop": true,
     "jsx": "react-native",
@@ -15,7 +18,6 @@
     "noEmit": true,
     "resolveJsonModule": true,
     "skipLibCheck": true,
-    "target": "ESNext",
     "strict": true
   },
   "exclude": [
