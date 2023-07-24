@@ -1,7 +1,8 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
   "files": [
-    "./@types/declarations.d.ts"
+    "./@types/declarations.d.ts",
+    "./@types/custom.d.ts"
   ],
   "compilerOptions": {
     "target": "es2017",
