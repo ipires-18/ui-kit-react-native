@@ -1,55 +1,12 @@
-# OSX
-#
-.DS_Store
-
-# Xcode
-#
-build/
-*.pbxuser
-!default.pbxuser
-*.mode1v3
-!default.mode1v3
-*.mode2v3
-!default.mode2v3
-*.perspectivev3
-!default.perspectivev3
-xcuserdata
-*.xccheckout
-*.moved-aside
-DerivedData
-*.hmap
-*.ipa
-*.xcuserstate
-project.xcworkspace
-
-# Android/IntelliJ
-#
-build/
-.idea
-.gradle
-local.properties
-*.iml
-*.hprof
-.cxx/
-*.keystore
-!debug.keystore
-
-# node.js
-#
 node_modules/
+lerna-debug.log
 npm-debug.log
+storybook-static
+packages/components/**/dist
+packages/components/**/yarn.lock
+.idea
+.npmrc
 yarn-error.log
-
-# Bundle artifacts
-*.jsbundle
-
-# CocoaPods
-/ios/Pods/
-
-# Temporary files created by Metro to check the health of the file watcher
-.metro-health-check*
-
-# Expo
-.expo/
-web-build/
-dist/
+build-storybook
+build/
+coverage
